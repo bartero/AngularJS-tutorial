@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your tasks</title>
+	<meta charset="utf-8" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div ng-app="myListApp">
+<div ng-controller="MyListController as myList">
+  <p>
+    <em>
+      Remaining {{myList.remaining()}} out of {{myList.elements.length}}
+    </em>
+    <a href="" ng-click="myList.archive()">(archive)</a>
+  </p>
+
+  <ul class="list-unstyled">
+    <li ng-repeat="element in myList.elements">
+      <label class="checkbox">
+        <input type="checkbox" ng-model="element.done">
+        <span class="done-{{element.done}}">{{element.label}}</span>
+      </label>
+    </li>
+    <li>
+      <label class="checkbox">
+        <big>
+        <form ng-submit='myList.addNew()'>
+          <input type="checkbox" ng-model="myList.newDone" disabled/>
+          <input type="text" maxlength="25" class="uncommitedTask done-{{myList.newDone}}" ng-model="myList.newLabel" placeholder="Enter your new task here" />
+			 <input type="submit" class="btn-primary" value="+">
+        </form>
+        </big>
+      </label>
+    </li>
+  </ul>
+
+
+</div>
+</div>
+</body>
+</html>
