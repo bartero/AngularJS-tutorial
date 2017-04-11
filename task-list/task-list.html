@@ -1,0 +1,28 @@
+<div>
+  <p>
+    <em>
+      Remaining {{remaining()}} out of {{elements.length}}
+    </em>
+    <a href="" ng-click="archive()">(archive)</a>
+  </p>
+
+  <ul class="list-unstyled">
+    <li ng-repeat="element in elements">
+      <label class="checkbox">
+        <input type="checkbox" ng-model="element.done">
+        <span class="done-{{element.done}}">{{element.label}}</span>
+      </label>
+    </li>
+    <li>
+      <label class="checkbox">
+        <big>
+        <form ng-submit='addNew()'>
+          <input type="checkbox" ng-model="newDone" disabled/>
+          <input type="text" maxlength="25" class="uncommitedTask done-{{newDone}}" ng-model="newLabel" placeholder="Enter your new task here" />
+			 <input type="submit" class="btn-primary" value="+">
+        </form>
+        </big>
+      </label>
+    </li>
+  </ul>
+</div>
