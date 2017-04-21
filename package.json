@@ -1,0 +1,18 @@
+{
+  "name": "angular-tasks",
+  "private": false,
+  "version": "0.0.1",
+  "description": "My first app for AngularJS",
+  "repository": "https://github.com/bartero/angular-tasks",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "scripts": {
+
+    "prestart": "npm install",
+    "start": "http-server ./app -a localhost -p 8000 -c-1"
+
+
+  }
+}
