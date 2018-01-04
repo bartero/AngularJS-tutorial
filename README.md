@@ -1,4 +1,6 @@
-# My first Angular app
+# My first AngularJS app
+
+This is my first web application made with AngularJS. It is a simplest todo list app.
 
 ## Prerequisites
 
